@@ -1,0 +1,6 @@
+body {
+    /* background-image: url(https://res.cloudinary.com/dzrxa951f/image/upload/v1665951820/screws-600491_960_720_op1kv3.jpg); */
+    min-height: 100vh;
+    background-image: linear-gradient(transparent, white 75%), url(https://res.cloudinary.com/dzrxa951f/image/upload/v1665951820/screws-600491_960_720_op1kv3.jpg);
+    background-size: 100% 100%;
+}
