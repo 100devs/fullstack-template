@@ -10,7 +10,7 @@ module.exports = {
       //Grabbing just the posts of the logged-in user
       const recipes = await Recipe.find({ user: req.user.id });
       //Sending post data from mongodb and user data to ejs template
-      res.render("profile.ejs", { recipes: recipes, user: req.user });
+      res.render("profile.ejs", { posts: posts, user: req.user });
     } catch (err) {
       console.log(err);
     }
