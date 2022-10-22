@@ -9,21 +9,21 @@
           </div>
           <div class="mt-5">
             <h2>Add a post</h2>
-            <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+            <form action="/recipe/createRecipe" enctype="multipart/form-data" method="POST">
               <div class="mb-3">
-                  <label for="title" class="form-label">Name</label>
+                  <label for="name" class="form-label">Name</label>
                   <input type="text" class="form-control" id="title" name="name">
               </div>
               <div class="mb-3">
-                <label for="caption" class="form-label">Ingredients</label>
+                <label for="ingredients class="form-label">Ingredients</label>
                 <textarea class="form-control" id="ingredients" name="ingredients"></textarea>
               </div>
               <div class="mb-3">
-                <label for="caption" class="form-label">Directions</label>
+                <label for="directions" class="form-label">Directions</label>
                 <textarea class="form-control" id="directions" name="directions"></textarea>
               </div>
               <div class="mb-3">
-                <label for="imgUpload" class="form-label">Image</label>
+                <label for="" class="form-label">Image</label>
                 <input type="file" class="form-control" id="imageUpload" name="file">
               </div>
               <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
@@ -34,9 +34,11 @@
         <ul class="row list-unstyled">
         <% for(var i=0; i<posts.length; i++) {%>
           <li class="col-6 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id%>">
-              <h2><%= posts[i].title%></h2>
+            <a href="/recipe/<%= recipes[i]._id%>">
+              <h2><%= recipe[i].name%></h2>
               <img class="img-fluid" src="<%= posts[i].image%>">
+              <p> recipe[i].ingredients%></p>
+              <p> recipe[i].directions%></p>
             </a>
           </li>
         <% } %>
