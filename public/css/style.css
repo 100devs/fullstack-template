@@ -1,0 +1,58 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.logo {
+    height: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+body {
+    background-color: lightblue;
+}
+
+.slogan {
+    font-size: larger;
+    font-family: 'Anek Malayalam', sans-serif;
+    font-weight: bold;
+}
+
+.texts {
+    font-family: 'Anek Malayalam', sans-serif;
+}
+
+.logbut {
+    padding-bottom: -100px;
+}
+
+.header-nav li {
+    float: left;
+    padding-left: 50px;
+}
+
+.header-nav {
+    padding-left: 200px;
+    padding-top: 16px;
+}
+
+/* .nav-container {
+    background-color: white;
+    width: fit-content;
+    max-height: fit-content;
+} */
+
+.prof-pic {
+    border-radius: 50%;
+    height: 150px;
+    width: auto;
+    float: right;
+}
+
+.sub {
+    margin-bottom: 100px;
+}
