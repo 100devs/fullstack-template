@@ -16,6 +16,8 @@ body {
     background-color: lightblue;
 }
 
+
+
 .slogan {
     font-size: larger;
     font-family: 'Anek Malayalam', sans-serif;
@@ -33,18 +35,20 @@ body {
 .header-nav li {
     float: left;
     padding-left: 50px;
+    text-decoration: none;
 }
 
 .header-nav {
-    padding-left: 200px;
+    padding-left: 300px;
     padding-top: 16px;
 }
 
-/* .nav-container {
+.nav-container {
     background-color: white;
-    width: fit-content;
-    max-height: fit-content;
-} */
+    width: 10000px;
+    margin-left: -100px;
+    height: 60px;
+}
 
 .prof-pic {
     border-radius: 50%;
