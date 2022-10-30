@@ -38,6 +38,7 @@ module.exports = {
         image: result.secure_url,
         cloudinaryId: result.public_id,
         description: req.body.description,
+        tags: req.body.tags,
         user: req.user.id,
       });
       console.log("Post has been added!");
