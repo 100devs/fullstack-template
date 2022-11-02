@@ -1,23 +1,25 @@
-@tailwind base;
+/* @tailwind base;
 
 @tailwind components;
 
-@tailwind utilities;
+@tailwind utilities; */
 
-.logo {
-    height: 200px;
+/* .logo {
+    height: 90px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: auto;
+    float: left;
+    
 }
 
-body {
+/* body {
     background-color: lightblue;
-}
+} */
 
 
-
+/* 
 .slogan {
     font-size: larger;
     font-family: 'Anek Malayalam', sans-serif;
@@ -59,4 +61,16 @@ body {
 
 .sub {
     margin-bottom: 100px;
+}
+
+.butt {
+    width: 110px;
+}
+
+.intro {
+    clear: both;
+} */
+
+.butt {
+    margin-top: 16px;
 }
