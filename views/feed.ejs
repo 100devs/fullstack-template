@@ -151,13 +151,15 @@
       </div>
     </div>  
     <div class="card w-96 bg-base-100 shadow-xl">
-      <% for(var i=0; i<posts.length; i++) {%>
+      
         <li class="col-6 justify-content-between mt-5">
+          <% for(var i=0; i<posts.length; i++) {%>
           <a href="/post/<%= posts[i]._id%>">
             <figure></figure><img class="img-fluid" src="<%= posts[i].image%>"></figure>
           </a>
+          <% } %>
         </li>
-      <% } %>
+      
       <div class="card-body">
         <h2 class="card-title">Shoes!</h2>
         <p>If a dog chews shoes whose shoes does he choose?</p>
