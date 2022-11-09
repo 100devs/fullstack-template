@@ -1,22 +1,24 @@
 <%- include('partials/header') -%>
-<div class="min-h-full">
+<div class="min-h-full bg-white">
   <nav class="bg-gray-800">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 items-center justify-between">
         <div class="flex items-center">
-          <div class="flex-shrink-0">
-            <img class="h-8 w-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="LA Music Connect logo">
-          </div>
+          <a href="/feed">
+            <div class="flex-shrink-0">
+              <img class="h-8 w-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="LA Music Connect logo">
+            </div>
+          </a>
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Feed</a>
+              <a href="/feed" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Feed</a>
 
               <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">My Posts</a>
 
               <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Liked Posts</a>
 
-              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Add Post</a>
+              <a href="/profile" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Add Post</a>
 
              
             </div>
@@ -140,20 +142,20 @@
       <!-- Replace with your content -->
   <div class="container grid grid-cols-4 gap-4">
     <% for(var i=0; i<posts.length; i++) {%>
-      <div class="card w-90 bg-base-100 shadow-xl">
-        <figure><img class="img-fluid" src="<%= posts[i].image%>"></figure>
-        <div class="card-body">
-        <a href="/post/<%= posts[i]._id%>">
-        <h2 class="card-title"><%= posts[i].title%></h2>
-        </a>
-        <!-- <ul class="row list-unstyled">
+      <a href="/post/<%= posts[i]._id%>">
+        <div class="card w-90 bg-base-100 shadow-xl">
+          <figure><img class="img-fluid" src="<%= posts[i].image%>"></figure>
+          <div class="card-body hover:bg-gray-700 hover:text-white">
+          <h2 class="card-title"><%= posts[i].title%></h2>
+          <!-- <ul class="row list-unstyled">
           <li class="col-6 justify-content-between mt-5"> -->
-              <h2><%= posts[i].caption%></h2>
+          <h2><%= posts[i].caption%></h2>
           <!-- </li>
-        </ul> -->
+          </ul> -->
         <div class="card-actions justify-end"></div>
+        </div>
       </div>
-      </div>
+    </a>
     <% } %>
   </div>  
 
