@@ -84,8 +84,8 @@
       
 
 <main class="container">
-  <div class="row justify-content-center">
-    <section class="col-6 mt-5">
+  <div class="row justify-content-center mt-5">
+    <section class="col-6 mt-8 w-auto">
       <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
       <div class="alert alert-danger"><%= el.msg %></div>
       <% }) %> <% } %> <% if (locals.messages.info) { %> <%
@@ -114,7 +114,7 @@
             placeholder="Type here"
           />
         </div>
-        <button class="btn btn-secondary mb-8 mt-2">Submit</button>
+        <button class="btn btn-secondary mb-20 mt-2">Submit</button>
       </form>
     </section>
   </div>
