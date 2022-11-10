@@ -142,10 +142,10 @@
       <!-- Replace with your content -->
   <div class="container grid grid-cols-4 gap-4 row-span-full">
     <% for(var i=0; i<posts.length; i++) {%>
-      <a href="/post/<%= posts[i]._id%>" class="grow">
-        <div class="card w-90 bg-base-100 shadow-xl grow">
-          <figure><img class="img-fluid" src="<%= posts[i].image%>"></figure>
-          <div class="card-body hover:bg-gray-700 hover:text-white grow">
+      <a href="/post/<%= posts[i]._id%>" class="grow h-max">
+        <div class="card w-90 bg-base-100 shadow-xl h-max">
+          <img class="img-fluid h-max" src="<%= posts[i].image%>">
+          <div class="card-body hover:bg-gray-700 hover:text-white h-max">
           <h2 class="card-title"><%= posts[i].title%></h2>
           <!-- <ul class="row list-unstyled">
           <li class="col-6 justify-content-between mt-5"> -->
