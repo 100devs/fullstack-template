@@ -140,12 +140,12 @@
   <main>
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
       <!-- Replace with your content -->
-  <div class="container grid grid-cols-4 gap-4 row-span-full">
+  <div class="container grid grid-cols-4 gap-4 row-span-full items-stretch">
     <% for(var i=0; i<posts.length; i++) {%>
-      <a href="/post/<%= posts[i]._id%>" class="grow h-max">
-        <div class="card w-90 bg-base-100 shadow-xl h-max">
+      <a href="/post/<%= posts[i]._id%>" class="">
+        <div class="card w-90 bg-base-100 shadow-xl h-full">
           <img class="img-fluid h-max" src="<%= posts[i].image%>">
-          <div class="card-body hover:bg-gray-700 hover:text-white h-max">
+          <div class="card-body object-fill">
           <h2 class="card-title"><%= posts[i].title%></h2>
           <!-- <ul class="row list-unstyled">
           <li class="col-6 justify-content-between mt-5"> -->
