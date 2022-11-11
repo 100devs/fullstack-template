@@ -5,7 +5,7 @@
       <div class="flex h-16 items-center justify-between">
         <div class="flex items-center">
           <div class="flex-shrink-0">
-            <img class="h-8 w-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="LA Music Connect logo">
+            <img class="h-8 w-8" src="/imgs/default.png" alt="LA Music Connect logo">
           </div>
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
@@ -130,10 +130,10 @@
     </div>
   </nav>
 <div class="container">
-  <div class="row justify-content-center mt-5">
-    <div class="col-6">
-      <h2><%= post.title %></h2>
-      <img class="img-fluid" src="<%= post.image%>" />
+  <div class="row justify-content-center mt-5 hero min-h-screen bg-white">
+    <div class="hero-content flex-col lg:flex-row">
+      <h2 class="text-5xl font-bold"><%= post.title %></h2>
+      <img class="img-fluid max-w-sm rounded-lg shadow-2xl" src="<%= post.image%>" />
       <div class="row justify-content-between">
         <form
           class="col-1"
@@ -154,14 +154,14 @@
         <%}%>
       </div>
     </div>
-    <div class="col-3 mt-5">
-      <p><%= post.caption %></p>
+    <div class="col-2">
+      <p class=""><%= post.caption %></p>
     </div>
 
-    <div class="col-6 mt-5">
-      <a class="btn bg-indigo-600 text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/profile">Return to Profile</a>
-      <a class="btn bg-indigo-600 text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/feed">Return to Feed</a>
-    </div>
+    <!-- <div class="col-6 mt-5">
+      <a class="btn bg-indigo-600 text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium pb-7" href="/profile">Return to Profile</a>
+      <a class="btn bg-indigo-600 text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium pb-7" href="/feed">Return to Feed</a>
+    </div> -->
   </div>
 </div>
 
