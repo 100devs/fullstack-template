@@ -9,7 +9,7 @@
           </div>
           <div class="mt-5">
             <h2>Add a post</h2>
-            <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+            <form action="/log/createLog" enctype="multipart/form-data" method="POST">
               <div class="mb-3">
                   <label for="title" class="form-label">Title</label>
                   <input type="text" class="form-control" id="title" name="title">
@@ -28,11 +28,11 @@
       </div>
       <div class="col-6">
         <ul class="row list-unstyled">
-        <% for(var i=0; i<posts.length; i++) {%>
+        <% for(var i=0; i<logs.length; i++) {%>
           <li class="col-6 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id%>">
-              <h2><%= posts[i].title%></h2>
-              <img class="img-fluid" src="<%= posts[i].image%>">
+            <a href="/log/<%= logs[i]._id%>">
+              <h2><%= logs[i].title%></h2>
+              <img class="img-fluid" src="<%= logs[i].image%>">
             </a>
           </li>
         <% } %>

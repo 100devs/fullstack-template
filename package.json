@@ -1,13 +1,13 @@
 {
-  "name": "fullstack-template",
+  "name": "habit-tracker",
   "version": "1.0.0",
-  "description": "Starter template for future projects",
+  "description": "daily habit tracker app",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Maye Jesuorobo",
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^5.0.1",
