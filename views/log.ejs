@@ -2,17 +2,25 @@
 <div class="container">
   <div class="row justify-content-center mt-5">
     <div class="col-6">
-      <h2><%= log.title %></h2>
-      <img class="img-fluid" src="<%= log.image%>" />
-      <div class="row justify-content-between">
-        <form
-          class="col-1"
-          action="/log/likeLog/<%= log.id %>?_method=PUT"
-          method="POST"
-        >
-          <button class="btn btn-primary fa fa-heart" type="submit"></button>
-        </form>
-        <h3 class="col-3">Likes: <%= log.likes %></h3>
+      <h1>Past Daily Stats</h1>
+      <ul>
+        <!-- beginning of loop -->
+        <% for(const log of logs) {%>
+          <li class="col-6 justify-content-between mt-5">
+              <div>
+                <span><%= log.date %></span>
+                <span><%= log.habit.icon %></span>
+                <span><%= log.habit.habit %></span>
+                <span><%= log.habit.progress %></span>
+                <span><%= log.habit.unit %></span>
+              </div>
+            </li>
+            <% } %>
+      </ul>
+      <!-- end of loop -->
+
+      <!-- delete button form -->
+        
         <%if(log.user == user.id){ %>
         <form
           action="/log/deletePost/<%= log.id %>?_method=DELETE"
@@ -24,13 +32,10 @@
         <%}%>
       </div>
     </div>
-    <div class="col-3 mt-5">
-      <p><%= log.caption %></p>
-    </div>
+    <!-- end delete button form -->
 
     <div class="col-6 mt-5">
       <a class="btn btn-primary" href="/dashboard">Return to Dashboard</a>
-      <a class="btn btn-primary" href="/feed">Return to Feed</a>
     </div>
   </div>
 </div>

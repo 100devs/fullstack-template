@@ -1,35 +1,24 @@
 const mongoose = require("mongoose");
 
+// LOGS
+
 const LogSchema = new mongoose.Schema({
-  title: {
-    type: String,
-    required: true,
-  },
-  image: {
-    type: String,
-    require: true,
-  },
-  cloudinaryId: {
-    type: String,
-    require: true,
-  },
-  caption: {
-    type: String,
-    required: true,
-  },
-  likes: {
-    type: Number,
-    required: true,
-  },
+  habit: [{
+    habit: String,
+    icon: String,
+    unit: String,
+    progress: Number,
+  }],
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
+    ref: 'User',
   },
-  createdAt: {
+  date: {
     type: Date,
     default: Date.now,
   },
 });
+
 
 //MongoDB Collection named here - will give lowercase plural of name 
 module.exports = mongoose.model("Log", LogSchema);

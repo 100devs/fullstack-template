@@ -19,7 +19,7 @@ router.post("/createLog", upload.single("file"), logsController.createLog);
 
 //Enables user to like post. In controller, uses POST model to update likes by 1
 // change to likeLogs here and everywhere
-router.put("/likeLog/:id", logsController.likeLog); // Might relocate
+// router.put("/likeLog/:id", logsController.likeLog); // Might relocate
 // router.put("/likePost/:id", postsController.likePost);
 
 //Enables user to delete post. In controller, uses POST model to delete post from MongoDB collection

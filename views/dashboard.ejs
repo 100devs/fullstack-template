@@ -3,36 +3,31 @@
   <div class="row mt-5">
       <div class="col-6">
           <div>
-              <p><strong>User Name</strong>: <%= user.userName %></p>
-              <p><strong>Email</strong>: <%= user.email %></p>
               <a href="/logout" class="col-3 btn btn-primary">Logout</a>
           </div>
           <div class="mt-5">
-            <h2>Add a post</h2>
-            <form action="/log/createLog" enctype="multipart/form-data" method="POST">
+            <h1><%= user.userName %>'s Daily Habit Tracker</h1>
+            <form action="/habit/createHabit" enctype="multipart/form-data" method="POST">
               <div class="mb-3">
-                  <label for="title" class="form-label">Title</label>
-                  <input type="text" class="form-control" id="title" name="title">
+                  <!-- <label for="title" class="form-label">Title</label> -->
+                  <input type="text" class="form-control" id="icon" name="icon" placeholder="icon">
+                  <input type="text" class="form-control" id="habit" name="habit" placeholder="habit">
+                  <input type="number" class="form-control" id="increment" name="increment" placeholder="increment">
+                  <input type="text" class="form-control" id="unit" name="unit" placeholder="unit">
               </div>
-              <div class="mb-3">
-                <label for="caption" class="form-label">Caption</label>
-                <textarea class="form-control" id="caption" name="caption"></textarea>
-              </div>
-              <div class="mb-3">
-                <label for="imgUpload" class="form-label">Image</label>
-                <input type="file" class="form-control" id="imageUpload" name="file">
-              </div>
-              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+              <button type="submit" class="btn btn-primary">Track</button>
             </form>
           </div>
       </div>
       <div class="col-6">
         <ul class="row list-unstyled">
-        <% for(var i=0; i<logs.length; i++) {%>
+        <% for(var i=0; i<tracker.length; i++) {%>
           <li class="col-6 justify-content-between mt-5">
-            <a href="/log/<%= logs[i]._id%>">
-              <h2><%= logs[i].title%></h2>
-              <img class="img-fluid" src="<%= logs[i].image%>">
+            <!-- <a href="/log/<%= logs[i]._id%>"> -->
+            <a href="/log/<%= habits[i]._id%>">
+              <h2><%= habits[i].habit%></h2>
+              <!-- <h2><%= logs[i].title%></h2> -->
+              <!-- <img class="img-fluid" src="<%= logs[i].image%>"> -->
             </a>
           </li>
         <% } %>
