@@ -7,12 +7,12 @@
           </div>
           <div class="mt-5">
             <h1><%= user.userName %>'s Daily Habit Tracker</h1>
-            <form action="/habit/createHabit" enctype="multipart/form-data" method="POST">
+            <form action="/dashboard/createHabit" method="POST">
               <div class="mb-3">
                   <!-- <label for="title" class="form-label">Title</label> -->
                   <input type="text" class="form-control" id="icon" name="icon" placeholder="icon">
                   <input type="text" class="form-control" id="habit" name="habit" placeholder="habit">
-                  <input type="number" class="form-control" id="increment" name="increment" placeholder="increment">
+                  <input type="number" class="form-control" id="progress" name="progress" placeholder="progress">
                   <input type="text" class="form-control" id="unit" name="unit" placeholder="unit">
               </div>
               <button type="submit" class="btn btn-primary">Track</button>
@@ -21,16 +21,43 @@
       </div>
       <div class="col-6">
         <ul class="row list-unstyled">
-        <% for(var i=0; i<tracker.length; i++) {%>
+          <!-- Trying it out without the loop -->
+          
+
+          
+         <% for(const habit of habits) {%>
+
           <li class="col-6 justify-content-between mt-5">
-            <!-- <a href="/log/<%= logs[i]._id%>"> -->
-            <a href="/log/<%= habits[i]._id%>">
-              <h2><%= habits[i].habit%></h2>
-              <!-- <h2><%= logs[i].title%></h2> -->
-              <!-- <img class="img-fluid" src="<%= logs[i].image%>"> -->
-            </a>
+            <h3>
+              <%= habit.icon%>
+            </h3>
+            <h3>
+              <%= habit.habit%>
+            </h3>
+          
+            <form action="/dashboard/increment/<%= habit.id%>?_method=PUT" method="POST">
+              <button type="submit" class="btn btn-primary">+</button>
+            </form>
+          
+            <h3>
+              <%= habit.progress%>
+            </h3>
+          
+            <form action="/dashboard/decrement/<%= habit.id%>?_method=PUT" method="POST">
+              <button type="submit" class="btn btn-primary">-</button>
+            </form>
+          
+            <h3>
+              <%= habit.unit%>
+            </h3>
           </li>
-        <% } %>
+          
+          <!-- <li class="col-6 justify-content-between mt-5">
+            <a href="/dahboard/<%= habits[i]._id%>">
+              <h2><%= habits[i].habit%></h2>
+            </a>
+          </li> -->
+        <% } %> 
         </ul>
         <div class="row justify-content-center mt-5">
           <a class="btn btn-primary" href="/feed">Return to Feed</a>
