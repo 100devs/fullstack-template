@@ -1,4 +1,3 @@
-// const cloudinary = require("../middleware/cloudinary");
 // const Post = require("../models/Log");
 const Log = require("../models/Log");
 
@@ -10,7 +9,7 @@ module.exports = {
       //http://localhost:2121/post/631a7f59a3e56acfc7da286f
       //id === 631a7f59a3e56acfc7da286f
       const log = await Log.findById(req.params.id);
-      res.render("log.ejs", { post: post, user: req.user});
+      res.render("logs.ejs", { post: post, user: req.user});
     } catch (err) {
       console.log(err);
     }

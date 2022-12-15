@@ -18,7 +18,7 @@ module.exports = {
         icon: req.body.icon,
         increment: req.body.increment,
         unit: req.body.unit,
-        userId: req.user.id,
+        user: req.user.id,
       });
       console.log("Habit has been added!");
       res.redirect("/dashboard");

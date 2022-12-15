@@ -8,6 +8,7 @@ const methodOverride = require("method-override");
 const flash = require("express-flash");
 const logger = require("morgan");
 const connectDB = require("./config/database");
+// const nodeCron = require("node-cron")
 const mainRoutes = require("./routes/main");
 const logRoutes = require("./routes/logs");
 const dashRoutes = require("./routes/dashboard")
@@ -54,10 +55,13 @@ app.use(passport.session());
 //Use flash messages for errors, info, ect...
 app.use(flash());
 
+// node-cron for scheduling log upload
+// nodeCron.schedule(expression, function updateLogs(), options)
+
 //Setup Routes For Which The Server Is Listening
 app.use("/", mainRoutes);
 // app.use("/post", postRoutes);
-app.use("/log", logRoutes);
+app.use("/logs", logRoutes);
 app.use("/dashboard", dashRoutes);
 
 

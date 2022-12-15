@@ -29,18 +29,18 @@
 
           <li class="col-6 justify-content-between mt-5">
             <h3>
-              <%= habit.icon%>
+              <%=habit.icon%>
             </h3>
             <h3>
-              <%= habit.habit%>
+              <%=habit.habit%>
             </h3>
           
-            <form action="/dashboard/increment/<%= habit.id%>?_method=PUT" method="POST">
+            <form action="/dashboard/increment/<%=habit.id%>?_method=PUT" method="POST">
               <button type="submit" class="btn btn-primary">+</button>
             </form>
           
             <h3>
-              <%= habit.progress%>
+              <%=habit.progress%>
             </h3>
           
             <form action="/dashboard/decrement/<%= habit.id%>?_method=PUT" method="POST">
@@ -48,7 +48,7 @@
             </form>
           
             <h3>
-              <%= habit.unit%>
+              <%=habit.unit%>
             </h3>
           </li>
           
@@ -57,10 +57,10 @@
               <h2><%= habits[i].habit%></h2>
             </a>
           </li> -->
-        <% } %> 
+        <%}%> 
         </ul>
         <div class="row justify-content-center mt-5">
-          <a class="btn btn-primary" href="/feed">Return to Feed</a>
+          <a class="btn btn-primary" href="/log">Logs</a>
         </div>  
       </div>  
     </div>
