@@ -3,14 +3,14 @@ const router = express.Router();
 // const upload = require("../middleware/multer");
 const logsController = require("../controllers/logs");
 // const postsController = require("../controllers/posts");
-// const { ensureAuth } = require("../middleware/auth");
+const { ensureAuth } = require("../middleware/auth");
 
 //Post Routes
 //Since linked from server js treat each path as:
 //post/:id, post/createPost, post/likePost/:id, post/deletePost/:id
 // change to getLogs here and everywhere
-router.get("/:id", logsController.getLog);
-// router.get("/:id", ensureAuth, logsController.getLog);
+// router.get("/:id", logsController.getLog);
+router.get("/:id", ensureAuth, logsController.getLog);
 // router.get("/:id", ensureAuth, postsController.getPost); C
 
 //Enables user to create post w/ cloudinary for media uploads

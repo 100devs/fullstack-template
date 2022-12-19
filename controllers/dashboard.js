@@ -45,7 +45,7 @@ module.exports = {
   decrement: async (req, res) => {
     try {
       const habit = await Habit.findOne({ _id: req.params.id}).lean()
-      const decrement = habit.increment
+      const decrement = - habit.increment
       await Habit.findOneAndUpdate(
         { _id: req.params.id },
         {

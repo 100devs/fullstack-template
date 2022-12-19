@@ -16,6 +16,7 @@ router.get("/dashboard", ensureAuth, dashboardController.getDashboard);
 // router.get("/dashboard", ensureAuth, logsController.getDashboard);
 
 // Log Routes
+// comment out later to see why it is needed.
 router.get("/logs", logController.getLog);
 
 //Routes for user login/signup

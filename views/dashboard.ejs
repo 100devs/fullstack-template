@@ -12,7 +12,7 @@
                   <!-- <label for="title" class="form-label">Title</label> -->
                   <input type="text" class="form-control" id="icon" name="icon" placeholder="icon">
                   <input type="text" class="form-control" id="habit" name="habit" placeholder="habit">
-                  <input type="number" class="form-control" id="progress" name="progress" placeholder="progress">
+                  <input type="number" class="form-control" id="increment" name="increment" placeholder="increment">
                   <input type="text" class="form-control" id="unit" name="unit" placeholder="unit">
               </div>
               <button type="submit" class="btn btn-primary">Track</button>
@@ -51,16 +51,10 @@
               <%=habit.unit%>
             </h3>
           </li>
-          
-          <!-- <li class="col-6 justify-content-between mt-5">
-            <a href="/dahboard/<%= habits[i]._id%>">
-              <h2><%= habits[i].habit%></h2>
-            </a>
-          </li> -->
         <%}%> 
         </ul>
         <div class="row justify-content-center mt-5">
-          <a class="btn btn-primary" href="/log">Logs</a>
+          <a class="btn btn-primary" href="/logs">Logs</a>
         </div>  
       </div>  
     </div>

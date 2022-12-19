@@ -3,35 +3,38 @@
   <div class="row justify-content-center mt-5">
     <div class="col-6">
       <h1>Past Daily Stats</h1>
-      <ul>
+      <form action="/logs/createLog" method="POST">
+        <button class="btn btn-primary" type="submit">Create log test</button>
+      </form>
+      <ul class="row list-unstyled">
         <!-- beginning of loop -->
-        <% for(const log of logs) {%>
+        <% for(let i = 0; i < logs.length; i++) {%>
           <li class="col-6 justify-content-between mt-5">
               <div>
-                <span><%= log.date %></span>
-                <span><%= log.habit.icon %></span>
-                <span><%= log.habit.habit %></span>
-                <span><%= log.habit.progress %></span>
-                <span><%= log.habit.unit %></span>
+                <span><h2></h2><%= logs[i].date %></h2></span>
+                <% for(let j = 0; j < logs[i].habits.length; j++) {%>
+                  <span><%= logs[i].habits[j].icon %></span>
+                  <span><%= logs[i].habits[j].habit %></span>
+                  <span><%= logs[i].habits[j].progress %></span>
+                  <span><%= logs[i].habits[j].unit %></span>
+                <% } %>
               </div>
             </li>
-            <% } %>
-      </ul>
-      <!-- end of loop -->
-
-      <!-- delete button form -->
-        
-        <%if(log.user == user.id){ %>
-        <form
-          action="/log/deletePost/<%= log.id %>?_method=DELETE"
-          method="POST"
-          class="col-3"
-        >
-          <button class="btn btn-primary fa fa-trash" type="submit"></button>
-        </form>
-        <%}%>
-      </div>
-    </div>
+            <!-- end of loop -->
+            
+            <!-- delete button form -->
+            
+              <form
+              action="/logs/deleteLog/<%= logs[i]._id %>?_method=DELETE"
+              method="POST"
+              class="col-3"
+              >
+              <button class="btn btn-primary fa fa-trash" type="submit"></button>
+            </form>
+          </div>
+        </div>
+        <% } %>
+  </ul>
     <!-- end delete button form -->
 
     <div class="col-6 mt-5">

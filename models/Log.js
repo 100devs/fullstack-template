@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 // LOGS
 
 const LogSchema = new mongoose.Schema({
-  habit: [{
+  habits: [{
     habit: String,
     icon: String,
     unit: String,
@@ -15,7 +15,7 @@ const LogSchema = new mongoose.Schema({
   },
   date: {
     type: Date,
-    default: Date.now,
+    // default: Date.now,
   },
 });
 
