@@ -12,6 +12,12 @@ const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
 const logRoutes = require("./routes/logs");
 const dashRoutes = require("./routes/dashboard")
+const cron = require("node-cron");
+
+// npm install pm2
+cron.schedule("59 59 23 * * *", () => {
+  logsController.createLog(); 
+});
 
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
@@ -56,7 +62,10 @@ app.use(passport.session());
 app.use(flash());
 
 // node-cron for scheduling log upload
-// nodeCron.schedule(expression, function updateLogs(), options)
+// https://www.youtube.com/watch?v=x8VIVR6ABHo - gotten from this vid
+// nodeCron.schedule('*/2 * * * * *', () => {
+//   console.log("It's working");
+// })
 
 //Setup Routes For Which The Server Is Listening
 app.use("/", mainRoutes);
